@@ -1,74 +1,83 @@
 ---
-title: "Signing in to Visual Studio | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology:
-  - "vs-ide-general"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: Sign in to Visual Studio
+titleSuffix: ''
+ms.custom: seodec18
+ms.date: 07/24/2020
+ms.topic: conceptual
 ms.assetid: b9531c25-e4cf-43ae-b331-a9f31a8cd171
-caps.latest.revision: 30
-author: "kempb"
-ms.author: "kempb"
-manager: "ghogen"
-translation.priority.ht:
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "ru-ru"
-  - "zh-cn"
-  - "zh-tw"
-translation.priority.mt:
-  - "cs-cz"
-  - "pl-pl"
-  - "pt-br"
-  - "tr-tr"
+author: ornellaalt
+ms.author: ornella
+manager: jillfra
+ms.workload:
+- multiple
 ---
-# Signing in to Visual Studio
-You can personalize and optimize your development experience in Visual Studio if you set your Personalization account by signing in to the IDE.  
+# Sign in to Visual Studio
 
-## Why should I sign in to Visual Studio?  
- You gain the following benefits by signing in to Visual Studio:  
+You can personalize and optimize your development experience in Visual Studio by signing in to your personalization account.
 
--   **Grants access to a broad range of benefits** from the Visual Studio Dev Essentials program, including free software, training, support, and more. See [Visual Studio Dev Essentials](http://aka.ms/vsdevhelp) for more information.  
+> [!NOTE]
+> This topic applies to Visual Studio on Windows. For Visual Studio for Mac, see [Sign in to Visual Studio for Mac](/visualstudio/mac/signing-in).
 
--   **Synchronizes your Visual Studio settings** – Settings that you customize, such as key bindings, window layout and color theme, apply immediately when you sign in to Visual Studio on any device. See [Synchronized Settings in Visual Studio](../ide/synchronized-settings-in-visual-studio.md).  
+::: moniker range="vs-2017"
 
--   **Permanently unlocks Visual Studio Express Edition** – You can use any edition of Visual Studio Express for as long as you like, instead of being limited to the trial period of 30 days.  
+> [! WARNING]
+> Using Visual Studio 2017 to access resources configured for conditional access may trigger a degraded authentication experience, prompting reauthentication several times within the same Visual Studio session. 
+> To work with resources configured for conditional access, upgrade to Visual Studio 2019 Update 16.6 or later. For more information, see [How to use Visual Studio with accounts that require multi-factor authentication](work-with-multi-factor-authentication.md).
 
--   **Unlocks the Visual Studio Community Edition** instead of being limited to the trial period of 30 days.  
+::: moniker-end
 
--   **Extends the Visual Studio trial period** – You can use Visual Studio Professional or Visual Studio Enterprise for an additional 90 days, instead of being limited to the trial period of 30 days.  
+## Why should I sign in to Visual Studio?
 
--   **Unlocks Visual Studio if you use an account that's associated with an MSDN or VSO subscription**. See [How to Unlock Visual Studio](../ide/how-to-unlock-visual-studio.md).  
+When you sign in, you enrich your Visual Studio experience. For example, after you sign in, you can [synchronize your settings](synchronized-settings-in-visual-studio.md) across devices, extend a trial, and automatically connect to an Azure service, to name a few.
 
--   **Automatically connects to services such as Azure and Visual Studio Team Services** in the IDE without prompting again for credentials for the same account.  
+Here's a full list of what you can expect and what you can do after you sign in:
+- **Extend the Visual Studio trial period** - You can use Visual Studio Professional or Visual Studio Enterprise for an additional 90 days, instead of being limited to the trial period of 30 days. For more information, see [Extend a trial version or update a license](../ide/how-to-unlock-visual-studio.md).
 
-## How to sign in to Visual Studio  
- When you start Visual studio for the first time, you're asked to sign in and provide some basic registration information. You should choose a Microsoft account or a work or school account that best represents you. If you don't have any of these accounts, you can create a Microsoft account for free. See [How do I sign up for a Microsoft account?](http://windows.microsoft.com/en-us/windows-live/sign-up-create-account-how)  
+- **Continue using the Visual Studio Community edition** - If your Community edition installation prompts you for a license, sign in to the IDE to continue using Visual Studio Community for **free**. 
 
- Next, choose the UI settings and color theme that you want to use in Visual Studio. Visual Studio remembers these settings and synchronizes them across all Visual Studio environments you have signed in to. For a list of the settings that are synchronized, see [Synchronized Settings](../ide/synchronized-settings-in-visual-studio.md). You can change the settings later if you open the **Tools &#124; Options** menu in Visual Studio.  
+- **Unlock Visual Studio if you use an account that's associated with a Visual Studio subscription or an Azure DevOps organization**. For detailed instructions, see [Extend a trial version or update a license](../ide/how-to-unlock-visual-studio.md).
 
- After you provide the settings, Visual Studio starts, and you're signed in and ready to get started. To verify whether you're signed in, look for your name in the upper-right corner of the Visual Studio environment.  
+- **Access to the Visual Studio Dev Essentials program** - This program includes free software offerings, training, support, and more. See [Visual Studio Dev Essentials](https://visualstudio.microsoft.com/dev-essentials/) for more information.
 
- ![Currently logged in user](../ide/media/vs2015_username.png "VS2017_UserName")  
+- **Synchronize your Visual Studio settings** - Settings that you customize, such as key bindings, window layout, and color theme, apply immediately when you sign in to Visual Studio on any device. See [Synchronize settings in Visual Studio](../ide/synchronized-settings-in-visual-studio.md).
 
- Unless you sign out, you'll be automatically signed in to Visual Studio whenever you start it, and any changes to synchronized settings are automatically applied. To sign out, choose the down arrow next to your profile name in the Visual Studio environment, choose the **Account settings** command, and then choose the **Sign out** link. To sign in again, choose the **Sign in** command in the upper-right corner of the Visual Studio environment.  
+- **Automatically connect to services such as Azure and Azure DevOps Services** in the IDE without prompting again for credentials for the same account.
 
-## To change your profile information  
- In **File &#124; Account Settings,** you can see and update information about your Visual Studio profile and license. To edit your profile information, such as your account name, avatar picture, or email address:  
+## How to sign in to Visual Studio
 
-1.  Go to **File &#124; Account Settings**.  
+When you open Visual Studio for the first time, you're asked to sign in and provide some basic registration information. 
 
-2.  In the **Account Settings** dialog box, **Manage Visual Studio profile** link.  
+![Sign-in prompt](../ide/media/vs2019_signinpopup.png)
 
-3.  On the **My Microsoft Information** page in the browser, choose the **Edit Information** button.  
+You should choose a Microsoft account or a work or school account that best represents you. If you don't have any of these accounts, you can create a Microsoft account for free by clicking the link under the sign in button. If you're having trouble, see [How do I sign up for a Microsoft account?](https://support.microsoft.com/help/4026324/microsoft-account-how-to-create)
 
-4.  Change the settings that you want.  
+Next, choose the UI settings and color theme that you want to use in Visual Studio. Visual Studio remembers these settings and synchronizes them across all Visual Studio environments you have signed in to. For a list of the settings that are synchronized, see [Synchronized settings](../ide/synchronized-settings-in-visual-studio.md). You can change the settings later if you open the **Tools** > **Options** menu in Visual Studio.
 
-5.  When you're done, choose the **Save changes** button.
+After you provide the settings, Visual Studio starts, and you're signed in and ready to get started. To verify whether you're signed in, look for your name in the upper-right corner of the Visual Studio environment.
+
+![Currently logged in user in VS2019](../ide/media/vs2019_username.png)
+
+If you choose not to sign in when you first open Visual Studio, it's easy to do so later. Look for the **Sign in** link in the upper-right corner of the Visual Studio environment. 
+
+![Not signed in user](../ide/media/vs2019_usernotsignedin.png)
+
+Unless you sign out, you're automatically signed in to Visual Studio whenever you start it, and any changes to synchronized settings are automatically applied. To sign out, click on the icon with your profile name in the upper-right corner of the Visual Studio environment, choose the **Account settings** command, and then choose the **Sign out** link. To sign in again, choose the **Sign in** command in the upper-right corner of the Visual Studio environment.
+
+## To change your profile information
+
+1. Go to **File** > **Account Settings** and choose the **Manage Visual Studio profile** link.
+
+1. In the browser window, choose **Edit profile** and change the settings that you want.
+
+1. When you're done, choose **Save changes**.
+
+## Troubleshooting
+
+If you encounter any problems while signing in, please see the [Subscription support](https://visualstudio.microsoft.com/subscriptions/support/) page to get help.
+
+## See also
+
+* [Extend a trial version or update a license](../ide/how-to-unlock-visual-studio.md)
+* [Visual Studio IDE overview](../get-started/visual-studio-ide.md)
+* [Sign in (Visual Studio for Mac)](/visualstudio/mac/signing-in)
+* [Activation (Visual Studio for Mac)](/visualstudio/mac/activation)

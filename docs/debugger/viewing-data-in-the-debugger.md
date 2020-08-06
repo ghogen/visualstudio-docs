@@ -1,58 +1,39 @@
 ---
-title: "Viewing Data in the Debugger | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
+title: "Create custom views of data in the debugger | Microsoft Docs"
+ms.date: "01/09/2019"
+ms.topic: "conceptual"
+f1_keywords:
   - "vs.debug"
-dev_langs: 
-  - "FSharp"
-  - "VB"
+dev_langs:
   - "CSharp"
+  - "VB"
+  - "FSharp"
   - "C++"
   - "JScript"
-  - "VB"
-  - "CSharp"
-  - "C++"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "debugging [Visual Studio], inspecting programs"
   - "debugger, viewing data"
 ms.assetid: 13e1105f-f987-402e-9108-ec6ac12be042
-caps.latest.revision: 30
 author: "mikejo5000"
 ms.author: "mikejo"
-manager: "ghogen"
-translation.priority.ht: 
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "ru-ru"
-  - "zh-cn"
-  - "zh-tw"
-translation.priority.mt: 
-  - "cs-cz"
-  - "pl-pl"
-  - "pt-br"
-  - "tr-tr"
+manager: jillfra
+ms.workload:
+  - "multiple"
 ---
-# Viewing Data in the Debugger
-The [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] debugger provides a variety of tools for inspecting and modifying the state of your program. Most of these tools function only in break mode.  
-  
-## DataTips  
- DataTips are one of the most convenient tools for viewing information about the variables and objects in your program during debugging. When the debugger is in break mode, you can view the value of a variable within the current scope by placing the mouse pointer over the variable in a source window. For more information, see [View data values in Data Tips](../debugger/view-data-values-in-data-tips-in-the-code-editor.md).  
-  
-## Visualizers  
- Visualizers are a new component of the [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] debugger that enable you to view the contents of an object or variable in a meaningful way. For example, you can use the HTML visualizer to view an HTML string as it would be interpreted and displayed in a browser. You can access visualizers from DataTips, the **Watch** window, the **Autos** window, the **Locals** window, or the **QuickWatch** dialog box. For more information, see [Create Custom Visualizers](../debugger/create-custom-visualizers-of-data.md).  
-  
-## See Also  
- [Debugger Basics](../debugger/debugger-basics.md)   
- [Command Window](../ide/reference/command-window.md)   
- [Debugger Security](../debugger/debugger-security.md)
+# Create custom views of data in the Visual Studio debugger (C#, Visual Basic, C++)
+
+The [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] debugger provides many tools for inspecting and modifying the state of your program. Most of these tools function only in break mode.
+
+## Create custom views of data in variable windows and DataTips
+
+ Many of the [debugger windows](../debugger/debugger-windows.md), such as the **Autos** and **Watch** windows, allow you to inspect variables. You can customize how C++ types, managed objects, and your own types are shown in the debugger variable windows and in [DataTips](../debugger/view-data-values-in-data-tips-in-the-code-editor.md). For more information, see [Create custom views of C++ objects](../debugger/create-custom-views-of-native-objects.md) and [Create custom views of managed objects](../debugger/create-custom-views-of-managed-objects.md).
+
+## Create custom visualizers
+
+ Visualizers enable you to view the contents of an object or variable in a meaningful way. In the Visual Studio debugger, a visualizer refers to the different windows that you can open using the magnifying glass ![VisualizerIcon](../debugger/media/dbg-tips-visualizer-icon.png "Visualizer icon") icon. For example, the HTML visualizer shows how an HTML string would be interpreted and displayed in a browser. You can access visualizers from DataTips, the **Watch** window, the **Autos** window, and the **Locals** window. The **QuickWatch** dialog box also provides a visualizer. For more information, see [Create custom visualizers](../debugger/create-custom-visualizers-of-data.md).
+
+## See also
+
+- [First look at the debugger](../debugger/debugger-feature-tour.md)
+- [Command window](../ide/reference/command-window.md)
+- [Debugger security](../debugger/debugger-security.md)

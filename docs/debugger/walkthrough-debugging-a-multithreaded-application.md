@@ -1,271 +1,166 @@
 ---
-title: "Walkthrough: Debugging a Multithreaded Application | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "FSharp"
-  - "VB"
+title: "View threads in the debugger | Microsoft Docs"
+ms.date: "10/29/2018"
+ms.topic: "conceptual"
+f1_keywords:
+  - "vs.debug.threads"
+dev_langs:
   - "CSharp"
+  - "VB"
+  - "FSharp"
   - "C++"
-helpviewer_keywords: 
-  - "multithreaded debugging, walkthrough"
-  - "walkthroughs, multithreaded debugging"
+helpviewer_keywords:
+  - "threading [Visual Studio], debugging"
+  - "Thread.Name property"
+  - "debugger, Threads window"
+  - "SetThreadName function"
+  - "Threads window"
+  - "@TIB"
+  - "debugging [Visual Studio], threads"
 ms.assetid: 590ffd57-0556-43d8-8962-ee27e5b2b7d7
-caps.latest.revision: 38
 author: "mikejo5000"
 ms.author: "mikejo"
-manager: "ghogen"
-translation.priority.ht: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+manager: jillfra
+ms.workload:
+  - "multiple"
 ---
-# Walkthrough: Debugging a Multithreaded Application
-[!INCLUDE[vs_dev11_long](../data-tools/includes/vs_dev11_long_md.md)] provides an improved **Threads** window and other user interface improvements to make it easier to debug multithreaded applications. This walkthrough takes only a few minutes, but completing it will familiarize you with the new interface features for debugging multithreaded applications.  
-  
- To begin this walkthrough, you need a multithreaded application project. Follow the steps listed here to create that project.  
-  
-#### To create the walkthrough project  
-  
-1.  On the **File** menu, choose **New** and then click **Project**.  
-  
-     The **New Project** dialog box appears.  
-  
-2.  In the **Project Type**s box, click the language of your choice: **Visual Basic**, **Visual C#**, or **Visual C++**.  
-  
-3.  In the **Templates** box, choose **Console Application** or **CLR Console Application**.  
-  
-4.  In the **Name** box, type the name MyThreadWalkthroughApp.  
-  
-5.  Click **OK**.  
-  
-     A new console project appears. When the project has been created, a source file appears. Depending on the language you have chosen, the source file might be called Module1.vb, Program.cs, or MyThreadWalkthroughApp.cpp  
-  
-6.  Delete the code that appears in the source file and replace it with the example code that appears in the section "Creating a Thread" of the topic [Creating Threads and Passing Data at Start Time](http://msdn.microsoft.com/Library/52b32222-e185-4f42-91a7-eaca65c0ab6d).  
-  
-7.  On the **File** menu, click **Save All**.  
-  
-#### To begin the walkthrough  
-  
--   In the source window, look for the following code:  
-  
-    ```vb  
-    Thread.Sleep(3000)   
-    Console.WriteLine(  
-    ```  
-  
-```c#  
-Thread.Sleep(3000);  
-Console.WriteLine();  
-```  
-  
-```cpp  
-Thread::Sleep(3000);  
-Console.WriteLine();  
-```  
-  
-#### To start debugging  
-  
-1.  Right-click the `Console.WriteLine` statement, point to **Breakpoint** and then click **Insert Breakpoint**.  
-  
-     In the gutter on the left side of the source window, a red ball appears. This indicates that a breakpoint is now set at this location.  
-  
-2.  On the **Debug** menu, click **Start Debugging**.  
-  
-     Debugging starts, your console application starts to run, and then stops at the breakpoint.  
-  
-3.  If the console application window has focus at this point, click in the [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] window to return focus to [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)].  
-  
-4.  In the source window, locate the line that contains the following code:  
-  
-    ```vb  
-    Thread.Sleep(5000)   
-    ```  
-  
-```c#  
-Thread.Sleep(3000);  
-```  
-  
-```cpp  
-Thread::Sleep(3000);  
-```  
-  
-1.  
-  
-#### To discover the thread marker  
-  
-1.  Right-click in the **Threads** window, then click **Show Threads in Source**.  
-  
-2.  Look at the gutter on the left side of the window. On this line, you will see an icon that resembles two cloth threads. One thread is red and the other is blue. The thread marker indicates that a thread is stopped at this location. Possibly, thread is stopped at this location.  
-  
-3.  Hover the pointer over the thread marker. A DataTip that appears. The DataTip tells you the name and thread ID number for each stopped thread. In this case, there is only one thread, whose name is probably `<noname>`.  
-  
-4.  Right-click the thread marker. Note the choices on the shortcut menu.  
-  
- This icon is a *thread marker*:  
-  
- ![Thread Marker](../debugger/media/threadmarker.gif "ThreadMarker")  
-  
-## Flagging and Unflagging Threads  
- In [!INCLUDE[vs_orcas_long](../debugger/includes/vs_orcas_long_md.md)], you can flag threads that you want to give special attention. Flagging threads is a good way to keep track of important threads and ignore threads you do not care about.  
-  
-#### To flag threads  
-  
-1.  On **View** menu, point to **Toolbars**.  
-  
-     Make sure that the **Debug Location** toolbar is selected.  
-  
-2.  Go to the **Debugging Location** toolbar and click the **Thread** list.  
-  
-    > [!NOTE]
-    >  You can recognize this toolbar by three prominent lists: **Process**, **Thread**, and **Stack Frame**.  
-  
-3.  Notice how many threads appear in the list.  
-  
-4.  Go back to the source window and right-click the **Thread** marker again.  
-  
-5.  On the shortcut menu, point to **Flag**, and then click the thread name and ID number.  
-  
-6.  Go back to **Debugging Location** toolbar and click the **Thread** list again.  
-  
-     Only the flagged thread appears in the list now. The flag button that is just to the right of the **Thread** list. The flag icon on the button was dimmed before. Now, it is a solid, bright red.  
-  
-7.  Hover the pointer over the flag icon.  
-  
-     A pop-up appears. This pop-up tells you what mode the **Thread** list is in: **Show Only Flagged Threads**.  
-  
-8.  Click the flag button to toggle back to **Show All Threads** mode.  
-  
-9. Click the **Thread** list again and verify that you can now see all threads again.  
-  
-10. Click the flag button to toggle back to **Show Only Flagged Threads**.  
-  
-11. On the **Debug** menu, point to **Windows** and then click **Threads**.  
-  
-     The **Threads** window appears. One thread has a prominent flag icon attached to it.  
-  
-12. In the source window, right-click the thread marker again.  
-  
-     Notice what choices are now available on the shortcut menu. Instead of **Flag**, you now see **Unflag**. Do not click **Unflag**.  
-  
-13. Go to the next procedure about how to unflag threads.  
-  
-#### To unflag threads  
-  
-1.  On the **Threads** window, right-click the line corresponding to the flagged thread.  
-  
-     A shortcut menu is displayed. It has options to **Unflag** and **Unflag All**.  
-  
-2.  To unflag the thread, click **Unflag**.  
-  
-3.  Click the red flag icon.  
-  
-4.  Look at the **Debugging Location** toolbar again. The flag button is dimmed again. You unflagged the only flagged thread. Because there are no flagged threads, the toolbar has gone back to **Show All Threads** mode. Click the **Thread** list and verify that you can see all threads.  
-  
-5.  Go back to the **Threads** window and examine the information columns.  
-  
-     At the top of each column, most of the buttons have titles that identify the column. However, The first column on the left has no title. Instead, it has an icon, which is the outline of a flag. You will notice the same outline in each row of the thread list. The outline means that the thread is unflagged.  
-  
-6.  Click the flag outlines for two threads, the second and third from the bottom of the list.  
-  
-     The flag icons become solid red, instead of hollow outlines.  
-  
-7.  Click the button at the top of the flag column.  
-  
-     The order of the thread list changed when you clicked the button. The thread list is now sorted with the flagged threads on top.  
-  
-8.  Again, click the button at the top of the flag column.  
-  
-     The sort order changed again.  
-  
-## More about the Threads window  
-  
-#### To learn more about the Threads window  
-  
-1.  In the **Threads** window, examine the third column from the left. The button at the top of this column says **ID**.  
-  
-2.  Click **ID**.  
-  
-     The thread list is now sorted by thread ID number.  
-  
-3.  Right-click any thread in the list. On the shortcut menu, click **Hexadecimal display**.  
-  
-     The format of the thread ID numbers is changed.  
-  
-4.  Hover the mouse pointer over any thread in the list.  
-  
-     After a momentary delay, a DataTip appears. It shows a partial call stack for the thread.  
-  
-5.  Look at the fourth column from the left, which is labeled **Category**. The threads are classified into categories.  
-  
-     The first thread created in a process is referred to as the main thread. Locate it in the thread list.  
-  
-6.  Right-click the main thread and then click **Switch to Thread**.  
-  
-     A warning dialog box appears. It tells you that [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] cannot display source code for the main thread.  
-  
-     Click **OK**.  
-  
-7.  Look at the **Call Stack** window and the **Debug Location** toolbar.  
-  
-     The contents of the **Call Stack** window have changed.  
-  
-## Switching the Active Thread  
-  
-#### To switch threads  
-  
-1.  In the **Threads** window, examine the second column from the left. The button at the top of this column has no text or icon. This column is the **Active Thread** column.  
-  
-2.  Look at the **Active Thread** column and notice that one thread has a yellow arrow. This is the *active thread indicator*.  
-  
-3.  Make a note of the thread ID number where the active thread indicator is located. You will move the active thread indicator to another thread, but you will have to put it back when you have finished.  
-  
-4.  Right-click another thread and then click **Switch to Thread**.  
-  
-5.  Look at the **Call Stack** window in the source window. The contents have changed.  
-  
-6.  Look at the **Debug Location** toolbar. The active thread has changed there, too.  
-  
-7.  Go to the **Debug Location** toolbar. Click the **Thread** box and choose a different thread from the drop-down list.  
-  
-8.  Look at the **Threads** window. The active thread indicator has changed.  
-  
-9. In the source window, right-click a thread marker. On the shortcut menu, point to **Switch to** and click a thread name/ID number.  
-  
-     You have now seen three ways of changing the active thread: using the **Threads** window, the **Thread** box in the **Debug Location** toolbar, and the thread indicator in the source window.  
-  
-     With the thread indicator, you can switch only to threads that are stopped at that particular location. By using the **Threads** window and **Debug Location** toolbar, you can switch to any thread.  
-  
-## Freezing and thawing thread execution  
-  
-#### To freeze and unfreeze threads  
-  
-1.  In the **Threads** window, right-click any thread and then click **Freeze**.  
-  
-2.  Look at the active thread column. The pair of vertical bars now appear there. Those two blue bars indicate that the thread is frozen.  
-  
-3.  Look at the **Suspend** column. The suspend count for the thread is now 1.  
-  
-4.  Right-click the frozen thread and then click **Thaw**.  
-  
-     The active thread column and the **Suspend** column change.  
-  
-## See Also  
- [Debug Multithreaded Applications](../debugger/debug-multithreaded-applications-in-visual-studio.md)   
- [How to: Switch to Another Thread While Debugging](../debugger/how-to-switch-to-another-thread-while-debugging.md)
+# View threads in the Visual Studio debugger by using the Threads window (C#, Visual Basic, C++)
+In the **Threads** window, you can examine and work with threads in the application that you're debugging. For step-by-step guidance on how to use the **Threads** window, see [Walkthrough: Debug by using the Threads window](../debugger/how-to-use-the-threads-window.md).
+
+## Use the Threads window
+ The **Threads** window contains a table where each row describes a separate thread in your application. By default, the table lists all the threads in your application, but you can filter the list to show only the threads that interest you. Each column describes a different type of information. You can also hide some columns. If you display all the columns, the following columns appear, from left to right:
+
+- **Flag**: In this unlabeled column, you can mark a thread to which you want to pay special attention. For information about how to flag a thread, see [How to: Flag and unflag threads](../debugger/how-to-flag-and-unflag-threads.md).
+
+- **Current thread**: In this unlabeled column, a yellow arrow indicates the current thread. An arrow outline indicates the current debugger context for a non-current thread.
+
+- **ID**: Displays the identification number for each thread.
+
+- **Managed ID**: Displays the managed identification numbers for managed threads.
+
+- **Category**: Displays the category of threads as either user interface threads, remote procedure call handlers, or worker threads. A special category identifies the main thread of the application.
+
+- **Name**: Identifies each thread by name, if it has one, or as \<No Name>.
+
+- **Location**: Shows where the thread is running. You can expand this location to show the full call stack for the thread.
+
+- **Priority**: An advanced column (hidden by default) that displays the priority or precedence that the system has assigned to each thread.
+
+- **Affinity Mask**: An advanced column (hidden by default) that shows the processor affinity mask for each thread. In a multiprocessor system, the affinity mask determines which processors on which a thread can run.
+
+- **Suspended Count**: An advanced column (hidden by default) that displays the suspended count. This count determines whether a thread can run. For more information about suspended counts, see [Freeze and thaw threads](#freeze-and-thaw-threads).
+
+- **Process Name**: An advanced column (hidden by default) that displays the process to which each thread belongs. The data in this column can be useful when you're debugging many processes.
+
+- **Process ID**: An advanced column (hidden by default) that displays the process ID to which each thread belongs.
+
+- **Transport Qualifier**: An advanced column (hidden by default) that uniquely identifies the machine to which the debugger is connected.
+
+### To display the Threads window in break mode or run mode
+
+- While Visual Studio is in debug mode, select the **Debug** menu, point to **Windows**, and then select **Threads**.
+
+### To display or hide a column
+
+- In the toolbar at the top of the **Threads** window, select **Columns**. Then, select or clear the name of the column that you want to display or hide.
+
+## Display flagged threads
+ You can flag a thread that you want to give special attention by marking it with an icon in the **Threads** window. For more information, see [How to: Flag and Unflag threads](../debugger/how-to-flag-and-unflag-threads.md). In the **Threads** window, you can choose to display all the threads or only the flagged threads.
+
+### To display only flagged threads
+
+- Choose **Show Flagged Threads Only** in the toolbar at the top of the **Threads** window. (If it's dimmed, you'll need to flag some threads first.)
+
+## Freeze and thaw threads
+ When you freeze a thread, the system won't start execution of the thread even if resources are available.
+
+ In native code, you can suspend or resume threads by calling the Windows functions `SuspendThread` and `ResumeThread`. Or, call the MFC functions [CWinThread::SuspendThread](/cpp/mfc/reference/CWinThread-class#suspendthread) and [CWinThread::ResumeThread](/cpp/mfc/reference/CWinThread-class#resumethread). If you call `SuspendThread` or `ResumeThread`, the *suspended count* shown in the **Threads** window will be changed. The suspended count doesn't change if you freeze or thaw a native thread. A thread can't execute in native code unless it's thawed and has a suspended count of zero.
+
+ In managed code, the suspended count changes when you freeze or thaw a thread. If you freeze a thread in managed code, its suspended count is 1. When you freeze a thread in native code, its suspended count is 0, unless you used the `SuspendThread` call.
+
+> [!NOTE]
+> When you debug a call from native code to managed code, the managed code runs in the same physical thread as the native code that called it. Suspending or freezing the native thread freezes the managed code also.
+
+### To freeze or thaw execution of a thread
+
+- In the toolbar at the top of the **Threads** window, select **Freeze Threads** or **Thaw Threads**.
+
+     This action affects only threads that are selected in the **Threads** window.
+
+### Switch to another thread
+
+A yellow arrow indicates the current thread (and the location of the execution pointer). A green arrow with a curly tail indicates a non-current thread has the current debugger context.
+
+#### To switch to another thread
+
+- Follow either of the following steps:
+
+  - Double-click any thread.
+
+  - Right-click a thread and select **Switch To Thread**.
+
+## Group and sort threads
+ When you group threads, a heading appears in the table for each group. The heading contains a group description, such as **Worker Thread** or **Unflagged Threads**, and a tree control. The member threads of each group appear under the group heading. If you want to hide the member threads for a group, use the tree control to collapse the group.
+
+ Because grouping takes precedence over sorting, you can group threads by category, for example, and then sort them by ID within each category.
+
+### To sort threads
+
+1. In the toolbar at the top of the **Threads** window, select the button at the top of any column.
+
+     The threads are now sorted by the values in that column.
+
+2. If you want to reverse the sort order, select the same button again.
+
+     Threads that appeared at the top of the list now appear on the bottom.
+
+### To group threads
+
+- In the **Threads** window toolbar, select the **Group by** list, then select the criteria that you want to group threads by.
+
+### To sort threads within groups
+
+1. In the toolbar at the top of the **Threads** window, select the **Group by** list, then select the criteria that you want to group threads by.
+
+2. In the **Threads** window, select the button at the top of any column.
+
+     The threads are now sorted by the values in that column.
+
+### To expand or collapse all groups
+
+- In the toolbar at the top of the **Threads** window, select **Expand groups** or **Collapse groups**.
+
+## Search for specific threads
+ You can search for threads that match a specified string in the **Threads** window. When you search for threads, the window displays all the threads matching the search string in any column. This information includes the thread location that appears at the top of the call stack in the **Location** column. By default, the full call stack isn't searched.
+
+### To search for specific threads
+
+1. In the toolbar at the top of the **Threads** window, go to the **Search** box and either:
+
+     - Enter a search string and then press **Enter**.
+
+     \- or -
+
+     - Select the drop-down list next to the **Search** box and select a search string from a previous search.
+
+2. (Optional) To include the full call stack in your search, select **Search Call Stack**.
+
+## Display thread call stacks and switch between frames
+In a multithreaded program, each thread has its own call stack. The **Threads** window provides a convenient way to view these stacks.
+
+> [!TIP]
+> For a visual representation of the call stack for each thread, use the [Parallel Stacks](../debugger/get-started-debugging-multithreaded-apps.md) window.
+
+### To view the call stack of a thread
+
+- In the **Location** column, select the inverted triangle next to the thread location.
+
+     The location expands to show the call stack for the thread.
+
+### To view or collapse the call stacks of all threads
+
+- In the toolbar at the top of the **Threads** window, select **Expand Call Stacks** or **Collapse Call Stacks**.
+
+## See also
+- [Debug multithreaded applications](../debugger/debug-multithreaded-applications-in-visual-studio.md)
+- [Get started debugging multithreaded applications](../debugger/get-started-debugging-multithreaded-apps.md)

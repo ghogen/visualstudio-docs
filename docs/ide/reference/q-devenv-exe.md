@@ -1,43 +1,28 @@
 ---
-title: "-? (devenv.exe) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-general"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "/? Devenv switch"
+title: -? (devenv.exe)
+ms.date: 12/10/2018
+ms.topic: reference
+helpviewer_keywords:
+- /? Devenv switch
+- Devenv, /? switch
+- Devenv, command-line help
 ms.assetid: fd8fd6b2-1304-4d06-8118-6629666801fb
-caps.latest.revision: 10
-author: "kempb"
-ms.author: "kempb"
-manager: "ghogen"
-translation.priority.ht: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+author: TerryGLee
+ms.author: tglee
+manager: jillfra
+ms.workload:
+- multiple
 ---
 # /? (devenv.exe)
-Displays a message box listing all `devenv` switches, with a brief description of each one.  
-  
-## Syntax  
-  
-```  
-devenv /?  
-```  
-  
-## See Also  
- [Devenv Command Line Switches](../../ide/reference/devenv-command-line-switches.md)
+
+Displays a message box listing all `devenv` switches, with a brief description of each switch.
+
+## Syntax
+
+```shell
+devenv /?
+```
+
+## See also
+
+- [Devenv command-line switches](../../ide/reference/devenv-command-line-switches.md)

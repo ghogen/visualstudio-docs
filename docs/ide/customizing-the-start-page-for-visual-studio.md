@@ -1,76 +1,68 @@
 ---
-title: "Customizing the Start Page for Visual Studio | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology:
-  - "vs-ide-general"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: Change the startup experience
+ms.date: 02/01/2017
+ms.topic: conceptual
 f1_keywords:
-  - "vs.startpage"
-  - "VS.StartPage.HowDoI"
-  - "vs.ToolsOptionsPages.Startup"
+- vs.ToolsOptionsPages.Startup
 helpviewer_keywords:
-  - "Start Page [Visual Studio]"
-  - "customizing Start Page [Visual Studio]"
-  - "Visual Studio Start page"
-ms.assetid: 925d42eb-ec34-426e-ad81-19db8630e536
-caps.latest.revision: 45
-author: "kempb"
-ms.author: "kempb"
-manager: "ghogen"
-translation.priority.ht:
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+- Start Page [Visual Studio]
+- customizing Start Page [Visual Studio]
+- Visual Studio Start Page
+author: TerryGLee
+ms.author: tglee
+manager: jillfra
+ms.workload:
+- multiple
 ---
-# Customizing the Start Page for Visual Studio
-You can customize the start page for Visual Studio in several default ways, such as showing the **Open Project** dialog box or opening the solution that was loaded most recently. You can also show a custom start page, which is a Windows Presentation Foundation (WPF) XAML page that runs in a tool window and can run commands that are internal to Visual Studio.  
+# Customize startup
 
-## Customizing the default start page  
+You can customize the startup experience for Visual Studio in several different ways, such as opening your most recent solution or just an empty development environment.
 
-1.  On the menu bar, choose **Tools**, **Options**.  
+::: moniker range="vs-2017"
 
-2.  Expand **Environment**, and then choose **Startup**.  
+You can also show a custom start page, which is a Windows Presentation Foundation (WPF) XAML page that runs in a tool window and can run commands that are internal to Visual Studio.
 
-3.  In the **At startup** list, choose the item for the customization that you want.  
+::: moniker-end
 
-## Show a custom start page  
+## To change the startup item
 
-1.  Install a custom start page in one of the following ways:  
+1. On the menu bar, choose **Tools** > **Options**.
 
-    -   Install it from the [Visual Studio Gallery](http://visualstudiogallery.msdn.microsoft.com/site/search?f%5B0%5D.Type=SearchText&f%5B0%5D.Value=start%20page), another website, or a page on your local intranet.  
+2. Expand **Environment**, and then choose **Startup**.
 
-        > [!NOTE]
-        >  If you like a page that's targeted for an earlier version of Visual Studio, you can upgrade the page by using the Visual Studio SDK. See [How to: Upgrade a Visual Studio Custom Start Page](../misc/how-to-upgrade-a-visual-studio-custom-start-page.md).  
+::: moniker range="vs-2017"
 
-         Open a .vsix file that contains a custom start page, or copy and paste the start-page files into the **%USERPROFILE% \My Documents\Visual Studio 2017\StartPages** folder on your computer.  
+3. In the **At startup** list, choose the item to be displayed after Visual Studio launches.
 
-    -   Create your own start page if you've installed the Visual Studio SDK.  
+::: moniker-end
 
-         See [Creating Your Own Start Page](../misc/creating-your-own-start-page.md).  
+::: moniker range=">=vs-2019"
 
-2.  On the menu bar, choose **Tools**, **Options**.  
+3. In the **On startup, open** list, choose what you want to happen after Visual Studio launches. You can choose from **Start window** (which lets you open a new or existing project), **Most recent solution**, or **Empty environment**.
 
-3.  Expand **Environment**, and then choose **Startup**.  
+::: moniker-end
 
-4.  In the **Customize Start Page** list, choose the page that you want.  
+::: moniker range="vs-2017"
 
-> [!NOTE]
->  If an error in a custom start page causes Visual Studio to crash, you can start Visual Studio in safe mode and then set it to use the default start page. See [/SafeMode (devenv.exe)](../ide/reference/safemode-devenv-exe.md).  
+## To show a custom start page
 
-## See Also  
- [Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3)   
- [Creating Your Own Start Page](../misc/creating-your-own-start-page.md)
+You can [create your own custom start page](../extensibility/creating-a-custom-start-page.md) using the Visual Studio SDK, or use one that somebody else has already created. For example, you can find custom start pages at the [Visual Studio Marketplace](https://marketplace.visualstudio.com/search?target=VS&category=Tools&vsVersion=&subCategory=Start%20Pages&sortBy=Downloads).
+
+To install a custom start page, open the *.vsix* file, or copy and paste the start page files into the *%USERPROFILE%\Documents\Visual Studio 2017\StartPages* folder on your computer.
+
+### To select which custom start page to display
+
+1. On the menu bar, choose **Tools** > **Options**.
+
+1. Expand **Environment**, and then choose **Startup**.
+
+1. In the **Customize Start Page** list, choose the page that you want.
+
+> [!TIP]
+> If an error in a custom start page causes Visual Studio to crash, you can open Visual Studio in safe mode and then set it to use the default start page. See [/SafeMode (devenv.exe)](../ide/reference/safemode-devenv-exe.md).
+
+## See also
+
+- [Personalize the Visual Studio IDE](../ide/personalizing-the-visual-studio-ide.md)
+
+::: moniker-end
